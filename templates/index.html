@@ -4,7 +4,7 @@
     <title>Ev Fiyat Tahmini</title>
     <style>
         body {
-            background-color: #81e6d9;
+            background-color: #2f2fa2;
             font-family: Arial, sans-serif;
         }
 
@@ -40,6 +40,12 @@
             font-size: 16px;
             border-radius: 5px;
             border: 1px solid #ccc;
+            box-sizing: border-box; 
+        }
+
+        .form-input[aria-label="Brut Metrekareyi Giriniz"], 
+        .form-input[aria-label="Net Metrekareyi Giriniz"] {
+            text-align: right; 
         }
 
         .form-button {
@@ -49,7 +55,7 @@
             font-size: 18px;
             font-weight: bold;
             text-align: center;
-            background-color: #90cdf4;
+            background-color: #242582;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -68,11 +74,11 @@
         <h1 class="title">Ev Fiyat Tahmini</h1>
         <form id="prediction-form">
             <div class="form-group">
-                <label class="form-label" for="brut">Brut Metrekareyi Giriniz:</label>
+                <label class="form-label" for="brut">Brut Metrekare:</label>
                 <input class="form-input" type="number" id="brut" name="brut" required>
             </div>
             <div class="form-group">
-                <label class="form-label" for="yas">Bina Yaşını Seçiniz:</label>
+                <label class="form-label" for="yas">Bina Yaşı:</label>
                 <select class="form-input" id="yas" name="yas" required>
                     <option value="0">0</option>
                     <option value="1">1</option>
@@ -86,7 +92,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label class="form-label" for="kat1">Binanın Kat Sayısını Seçiniz:</label>
+                <label class="form-label" for="kat1">Binanın Kat Sayısı:</label>
                 <select class="form-input" id="kat1" name="kat1" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -102,11 +108,11 @@
                 </select>
             </div>
             <div class="form-group">
-                <label class="form-label" for="net">Net Metrekareyi Giriniz:</label>
+                <label class="form-label" for="net">Net Metrekare:</label>
                 <input class="form-input" type="number" id="net" name="net" required>
             </div>
             <div class="form-group">
-                <label class="form-label" for="oda">Oda Sayısını Seçiniz:</label>
+                <label class="form-label" for="oda">Oda Sayısı:</label>
                 <select class="form-input" id="oda" name="oda" required>
                     <option value="1">1</option>
                     <option value="1+1">1+1</option>
@@ -121,7 +127,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label class="form-label" for="kat2">Bulunduğu Katı Seçiniz:</label>
+                <label class="form-label" for="kat2">Bulunduğu Kat:</label>
                 <select class="form-input" id="kat2" name="kat2" required>
                     <option value="-1">-1</option>
                     <option value="-2">-2</option>
@@ -141,7 +147,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label class="form-label" for="isitma">Isıtma Türünü Seçiniz:</label>
+                <label class="form-label" for="isitma">Isıtma Türü:</label>
                 <select class="form-input" id="isitma" name="isitma" required>
                     <option value="Kat kaloriferi">Kat kaloriferi</option>
                     <option value="Kombi dogalgaz">Kombi doğalgaz</option>
