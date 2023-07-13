@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ev Fiyat Tahmini</title>
+    <style>
+        body {
+            background-color: #81e6d9;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            background-color: #90cdf4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .result {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Ev Fiyat Tahmini</h1>
+        <form id="prediction-form">
+            <div class="form-group">
+                <label class="form-label" for="brut">Brut Metrekareyi Giriniz:</label>
+                <input class="form-input" type="number" id="brut" name="brut" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="yas">Bina Yaşını Seçiniz:</label>
+                <select class="form-input" id="yas" name="yas" required>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5-10">5-10</option>
+                    <option value="11-15">11-15</option>
+                    <option value="16-20">16-20</option>
+                    <option value="21 ve uzeri">21 ve üzeri</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="kat1">Binanın Kat Sayısını Seçiniz:</label>
+                <select class="form-input" id="kat1" name="kat1" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="net">Net Metrekareyi Giriniz:</label>
+                <input class="form-input" type="number" id="net" name="net" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="oda">Oda Sayısını Seçiniz:</label>
+                <select class="form-input" id="oda" name="oda" required>
+                    <option value="1">1</option>
+                    <option value="1+1">1+1</option>
+                    <option value="2+1">2+1</option>
+                    <option value="3+1">3+1</option>
+                    <option value="3+2">3+2</option>
+                    <option value="3.5+1">3.5+1</option>
+                    <option value="4+1">4+1</option>
+                    <option value="4+2">4+2</option>
+                    <option value="5+1">5+1</option>
+                    <option value="5+2">5+2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="kat2">Bulunduğu Katı Seçiniz:</label>
+                <select class="form-input" id="kat2" name="kat2" required>
+                    <option value="-1">-1</option>
+                    <option value="-2">-2</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="7">7</option>
+                    <option value="10">10</option>
+                    <option value="Bahce Dubleks">Bahçe Dubleks</option>
+                    <option value="Bahce Kati">Bahçe Katı</option>
+                    <option value="Duz Giris">Düz Giriş</option>
+                    <option value="Mustakil Kat">Mustakil Kat</option>
+                    <option value="Yuksek Giris">Yüksek Giriş</option>
+                    <option value="Cati Dubleks">Çatı Dubleks</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="isitma">Isıtma Türünü Seçiniz:</label>
+                <select class="form-input" id="isitma" name="isitma" required>
+                    <option value="Kat kaloriferi">Kat kaloriferi</option>
+                    <option value="Kombi dogalgaz">Kombi doğalgaz</option>
+                    <option value="Merkezi dogalgaz">Merkezi doğalgaz</option>
+                    <option value="Yerden isitma">Yerden ısıtma</option>
+                </select>
+            </div>
+            <button class="form-button" type="submit">HESAPLA</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('prediction-form');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            fetch('/', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(response => {
+                resultDiv.innerText = 'Tahmini Fiyat: ' + response.prediction;
+            });
+        });
+    </script>
+</body>
+</html>
