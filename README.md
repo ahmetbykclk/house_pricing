@@ -13,6 +13,8 @@ We need to install these libraries for our Flask app :
 
 | pip install Flask | pip install xgboost | pip install pandas | pip install joblib | Flask for creating the web application, XGBoost for our machine learning model, pandas for data manipulation, and joblib for loading the pre-trained model.
 
+If you want to learn more about this project, you can visit my Medium story. Here is the link: https://medium.com/@ahmetyasin1258/house-price-prediction-with-machine-learning-81bfc471b936.
+
 ![Website](https://github.com/ahmetbykclk/house_pricing/assets/64368104/a386954d-b081-4fcf-baae-5f58aecb0203)
 
 
